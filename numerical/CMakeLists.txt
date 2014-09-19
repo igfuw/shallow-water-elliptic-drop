@@ -15,6 +15,9 @@ if (NOT CXX11_SUPPORTED)
   message(FATAL_ERROR "C++11 compatibility test failed - please update your compiler.")
 endif()
 
+# pthreads (TODO: more portable way of setting it)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+
 # Debug mode
 set(CMAKE_CXX_FLAGS_DEBUG "-DBZ_DEBUG -g")
 
@@ -32,6 +35,9 @@ if (NOT Boost_FOUND)
 ")
 endif()
 
+# HDF5 libraries
+find_package(HDF5 COMPONENTS CXX HL)
+
 # locating libmpdata++
 check_cxx_source_compiles("
   #include <libmpdata++/solvers/mpdata.hpp>
@@ -42,5 +48,5 @@ if (NOT LIBMPDATAXX_FOUND)
 endif()
 
 add_executable(spreading_drop_2d_el spreading_drop_2d_el.cpp)
-target_link_libraries(${test} ${Boost_LIBRARIES})
-target_link_libraries(${test} debug "-lblitz")
+target_link_libraries(spreading_drop_2d_el ${Boost_LIBRARIES} ${HDF5_LIBRARIES})
+target_link_libraries(spreading_drop_2d_el debug "-lblitz")
