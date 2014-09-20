@@ -79,12 +79,12 @@ def main(lambx0=2, time_f=10, lamb_lim=None, dotlamb_lim=None):
     solut_asym = eq_solver(lambx0, time_asym)
     
     if lambx0 == 2.:
-        plot_name1 = "fig1.pdf"
-        plot_name2 = "fig2.pdf"
+        plot_name1 = "fig1a.pdf"
+        plot_name2 = "fig1b.pdf"
     else:
         #changing pdf's names if called for different values of lambda_{x0}
-        plot_name1 = "fig1_lambx0=" + str(int(lambx0)) + ".pdf"
-        plot_name2 = "fig2_lambx0=" + str(int(lambx0)) + ".pdf" 
+        plot_name1 = "fig1a_lambx0=" + str(int(lambx0)) + ".pdf"
+        plot_name2 = "fig1b_lambx0=" + str(int(lambx0)) + ".pdf" 
 
     plottin_evol(solut, time, plot_name1)
     plotting_evol_ratio(solut_asym, time_asym, plot_name2)
