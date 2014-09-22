@@ -1,41 +1,46 @@
 Codes for reproducing Figs. 4-7.
-===========================
+================================
 
-For numerical solution presented in the paper,
- the libmpdata++ is needed. You can clone the library 
-from the git repository https://github.com/igfuw/libmpdataxx.
+To compile the code used to obtain the numerical solution presented in the paper,
+you need to first obtain the [libmpdata++](http://libmpdataxx.igf.fuw.edu.pl/) package. 
+You can clone the library from a repository at github.
+If you only want to install the library to run the code (without compiling
+the test programs shipped with the library), you can do the following steps:
 
-If you only want to install the library to run the code (without running 
-the library tests), you can do the following steps:
-   $ cd libmpdata
-   $ mkdir build
-   $ cd build
-   $ sudo cmake -P cmake_install.cmake
-
+    $ git clone http://github.com/slayoo/libmpdataxx
+    $ cd libmpdataxx
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ sudo cmake -P cmake_install.cmake
 
 After installing libmpdata++ you can run the reference simulation
-presented in the paper. After clonning ths repository, you can try:
-   $ cd shallow-water-elliptic-drop/numerical
-   $ mkdir build
-   $ cd build
-   $ cmake ..
-   $ make
-   $ ./spreading_drop_2d_el
+presented in the paper. After cloning this repository, you can try:
 
-After running a simulation, you should have a spreading_drop_2delipsa_fct+iga.out 
+    $ cd shallow-water-elliptic-drop/numerical
+    $ mkdir build
+    $ cd build
+    $ cmake .. -DCMAKE_BUILD_TYPE=Release
+    $ make
+    $ ./spreading_drop_2d_el
+
+After running the simulation, you should have a ``spreading_drop_2delipsa_fct+iga.out``
 folder with the model output.
 
 For plotting Figs. 4-7, you need Python with scientific libraries 
 (e.q. NumPy, SciPy, Matplotlib, h5py). 
 
-Figures 4 and 5 you will get after running:
-   $ python contours_h_v.py
+Figures 4 and 5 can be obtained by running:
 
-Figure 6 you will get after running:
-   $ python vertical_crosssection_num_an.py
+    $ python contours_h_v.py
 
-Figure 7 you will get after running:
-   $ python contours_hdiff.py
+Figure 6 can be obtained by running:
+
+    $ python vertical_crosssection_num_an.py
+
+Figure 7 can be obtained by running:
+
+    $ python contours_hdiff.py
 
  
  
