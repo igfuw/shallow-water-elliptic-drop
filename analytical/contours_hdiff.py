@@ -1,16 +1,11 @@
 import sys
-from scipy.optimize import fsolve
-import math
 import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
-import matplotlib.ticker as ticker
 import numpy as np
 import h5py
-#import plot_settings as ps
-import analytic_el_eq as eq_el
-import pdb
+import analytic_equations as an_eq
 
-#reading model output from text file and converting to an array (+transpose)
+
+#reading model output and saving as numpy arrays
 def reading_modeloutput(filename):
     f = h5py.File(filename, "r")
     h = np.array(f["h"]).transpose()
@@ -36,8 +31,8 @@ def main(dir, lamb_x0=2., lamb_y0=1., time=7, dt=0.01, dx=0.05, xy_lim=10,
     #calculating velocity from momentum, only for the droplet area - using numpy mask
     h_m = np.ma.masked_less(h_m, eps)
     #calculating the analytical solution, using the same mask
-    lamb_ar = eq_el.d2_el_lamb_lamb_t_evol(time, lamb_x0, lamb_y0)
-    h_an = eq_el.d2_el_height_plane(lamb_ar[0], lamb_ar[2], x_range, y_range)
+    lamb_ar = an_eq.d2_el_lamb_lamb_t_evol(time, lamb_x0, lamb_y0)
+    h_an = an_eq.d2_el_height_plane(lamb_ar[0], lamb_ar[2], x_range, y_range)
     h_an = np.ma.masked_less(h_an, eps)
     #the error is normalized by initial height of the drop
     h0_max = 1./ (lamb_x0 * lamb_y0)

@@ -1,8 +1,6 @@
-from scipy.integrate import odeint
 from matplotlib import cm
 import numpy as np
-#TODO uzgdnic ktory analityczny plik sie uzywa
-import analytic_eq as eq
+import analytic_equations as an_eq
 import ellipse_evolution_odeint as el_od
 import matplotlib.pyplot as plt
 import sys, getopt
@@ -13,8 +11,8 @@ def main(lamb0=1, time_f=10, lamb_lim=None, dotlamb_lim=None):
     solut_cr = el_od.eq_solver(lamb0, time, lamby0=lamb0)
     solut_el = el_od.eq_solver(2*lamb0, time, lamby0=0.5*lamb0)
     # solving analytical eqs. for axisymmetric drop
-    lamb_an_cr = eq.d2_lambda_evol(time)
-    dotlamb_an_cr = eq.d2_lambda_t_evol(lamb_an_cr)
+    lamb_an_cr = an_eq.d2_lambda_evol(lamb0, time)
+    dotlamb_an_cr = an_eq.d2_dot_lambda(lamb_an_cr, lamb0)
 
     #plotting
     fig = plt.figure(1, figsize = (6.5,5.5))

@@ -3,7 +3,7 @@ sys.path.append("../analytical/")
 import matplotlib.pyplot as plt
 import numpy as np
 import h5py
-import analytic_el_eq as eq_el
+import analytic_equations as an_eq
 
 
 #reading the model output and saving as numpy arrays
@@ -66,13 +66,13 @@ def main(dir, casename="fct+iga", lamb_x0=2., lamb_y0=1., time_l=[1,3,7],
         
         # calculating the analatycial solution for t=time
         x_range = y_range = np.linspace(-xy_lim, xy_lim, nxy)
-        lamb_ar = eq_el.d2_el_lamb_lamb_t_evol(time, lamb_x0, lamb_y0)
-        h_an = eq_el.d2_el_height_plane(lamb_ar[0], lamb_ar[2], x_range, y_range)
-        v_an = eq_el.d2_el_velocity_tot_plane(lamb_ar[0], lamb_ar[1], lamb_ar[2],
+        lamb_ar = an_eq.d2_el_lamb_lamb_t_evol(time, lamb_x0, lamb_y0)
+        h_an = an_eq.d2_el_height_plane(lamb_ar[0], lamb_ar[2], x_range, y_range)
+        v_an = an_eq.d2_el_velocity_tot_plane(lamb_ar[0], lamb_ar[1], lamb_ar[2],
                                               lamb_ar[3], x_range, y_range)
       
         # calculating depth for t=0
-        h_an0 = eq_el.d2_el_height_plane(2, 1, x_range, x_range)        
+        h_an0 = an_eq.d2_el_height_plane(2, 1, x_range, x_range)        
         # two vertical cross-scections 
         hx_an, hy_an = h_an[nxy/2,:], h_an[:,nxy/2]
         hx_an0, hy_an0 = h_an0[nxy/2,:], h_an0[:,nxy/2]
