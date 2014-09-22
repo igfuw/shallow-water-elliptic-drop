@@ -1,0 +1,37 @@
+language: cpp 
+os: 
+    - linux
+    - osx
+compiler:
+    - gcc
+    - clang
+
+before_install:
+    - sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty main universe multiverse"
+    - sudo apt-get update
+
+install:
+    - if [[ $CXX == 'clang++' ]]; then sudo apt-get install --no-install-recommends clang; fi
+    - if [[ $CXX == 'g++'     ]]; then sudo apt-get install --no-install-recommends g++  ; fi
+    - sudo apt-get install --no-install-recommends libhdf5-7
+    - sudo apt-get install --no-install-recommends libpango-1.0-0 libpangocairo-1.0-0 libhdf5-dev
+    - sudo apt-get install --no-install-recommends -t trusty -y libboost-thread-dev libboost-timer-dev libblitz0-dev libhdf5-serial-dev cmake 
+
+    # libmpdata
+    - cd ..
+    - git clone --depth=1 git://github.com/igfuw/libmpdataxx.git
+    - cd libmpdataxx
+    - mkdir build
+    - cd build
+    - cmake ..
+    - sudo cmake -P cmake_install.cmake
+
+script:
+    - cd ../../shallow-water-elliptic-drop
+    - mkdir build
+    - cd build
+    - cmake -DCMAKE_BUILD_TYPE=Debug ../
+    - make
+    - cmake -DCMAKE_BUILD_TYPE=Release ../
+    - make
+    # TODO: unit tests / run the simulation
