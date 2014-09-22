@@ -1,4 +1,5 @@
 import sys
+sys.path.append("../analytical/")
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import numpy as np
@@ -90,4 +91,4 @@ def main(dir, time_hl=[0, 1, 3, 7], time_vl=[3,7], dt=0.01, dx=0.05, xy_lim=10,
     plt.show()
 
 # using the model output from numerical directory
-main("../numerical/build/")
+main("build/")

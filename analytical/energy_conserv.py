@@ -13,7 +13,7 @@ def main(lambx0_l=[2,3], time_f=50, partlamb_lim=2.2):
     for lambx0 in lambx0_l:
         solut[str(lambx0)] = el_od.eq_solver(lambx0, time)
     
-    #plotting relation that is obtained from energy conservation
+    #plotting the relation  obtained from energy conservation
     fig = plt.figure(1, figsize = (8.,5))
     ax = plt.subplot(1,1,1)
     #plotting the LHS of eq. 14 for lambda_{x0} = 2 and 3
@@ -32,7 +32,7 @@ def main(lambx0_l=[2,3], time_f=50, partlamb_lim=2.2):
     plt.savefig("fig2.pdf")
     plt.show()
 
-# the code can be called with following options
+# the code can be called with the following options
 if __name__ == "__main__":
     opts, args = getopt.getopt(sys.argv[1:], "t:",
                                ["time_f="])
@@ -43,6 +43,3 @@ if __name__ == "__main__":
         
     # calling the main function with command-line arguments (if any defined)  
     main(**arg_dic) 
-
-
-
