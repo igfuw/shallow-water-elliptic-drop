@@ -1,4 +1,5 @@
 import sys
+sys.path.append("../analytical/")
 import matplotlib.pyplot as plt
 import numpy as np
 import h5py
@@ -45,4 +46,4 @@ def main(dir, lamb_x0=2., lamb_y0=1., time=7, dt=0.01, dx=0.05, xy_lim=10,
     plt.savefig("fig7.pdf")
     plt.show()
 
-main("../numerical/build/")
+main("build/")
