@@ -4,7 +4,7 @@ from scipy.optimize import fsolve
 from scipy.integrate import odeint
 
 
-# *** equations for 3D axisymmetric droplet (spreading on 2D plane under gravity)
+# *** equations for 3D axisymmetric drop (spreading on 2D plane under gravity)
 
 def d2_rad2(x,y):
     return x**2 + y**2
@@ -34,7 +34,7 @@ def d2_velocity_tot(lamb, lamb0, x, y):
 
 
 
-#  *** equations for 3D elliptic droplet (spreading on 2D plane under gravity) 
+#  *** equations for 3D elliptic drop (spreading on 2D plane under gravity) 
 
 # eq. 5 (Jarecka, Jaruga, Smolarkiewicz)
 def d2_el_height_plane(lamb_x, lamb_y, x, y):
