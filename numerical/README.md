@@ -3,9 +3,9 @@ Codes for reproducing Figs. 4-7.
 
 To compile the code used to obtain the numerical solution presented in the paper,
 you need to first obtain the [libmpdata++](http://libmpdataxx.igf.fuw.edu.pl/) package. 
-You can clone the library from a repository at github.
+You can clone the library from a [repository](https://github.com/igfuw/libmpdataxx) at github.
 If you only want to install the library to run the code (without compiling
-the test programs shipped with the library), you can do the following steps:
+the test programs shipped with the library), do the following steps:
 
     $ git clone http://github.com/slayoo/libmpdataxx
     $ cd libmpdataxx
@@ -15,7 +15,7 @@ the test programs shipped with the library), you can do the following steps:
     $ sudo cmake -P cmake_install.cmake
 
 After installing libmpdata++ you can run the reference simulation
-presented in the paper. After cloning this repository, you can try:
+presented in the paper. After cloning this repository, try:
 
     $ cd shallow-water-elliptic-drop/numerical
     $ mkdir build

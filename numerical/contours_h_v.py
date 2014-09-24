@@ -22,7 +22,7 @@ def contour_plot(ax, isub, var, U, V, x_range, y_range, levels_var=None, annot=N
     #    ax.set_xticklabels(())
     if isub%2 != 0:
         ax.set_yticklabels(())
-    #contour plot for vield
+    #contour plot for v field
     CS = plt.contourf(X, Y, var,  cmap=plt.cm.Blues, alpha=0.7, levels=levels_var)
     # plotting vectors from U and V fields
     if (U**2+V**2).max() > 0:
@@ -42,9 +42,9 @@ def contour_plot(ax, isub, var, U, V, x_range, y_range, levels_var=None, annot=N
 
 # time_hl - list of time levels for reading output and plotting height 
 # time_vl - list of time levels for plotting velocity - has to be a subset og time_hl
-# dx, dt -  model gridsize and time step
-# xy_lim - model domain
-# esp - epsilon used to calculate velocity (should be the same as in a simulation)
+# dx, dt  -  model gridsize and time step
+# xy_lim  - model domain
+# eps     - epsilon used to calculate velocity (should be the same as in a simulation)
 def main(dir, time_hl=[0, 1, 3, 7], time_vl=[3,7], dt=0.01, dx=0.05, xy_lim=10, 
          casename="fct+iga", eps=1.e-7):
 
@@ -60,7 +60,7 @@ def main(dir, time_hl=[0, 1, 3, 7], time_vl=[3,7], dt=0.01, dx=0.05, xy_lim=10,
         if time == 0:
             time_str = time_str + "00"
         h_m, px_m, py_m = reading_modeloutput(dir+"spreading_drop_2delipsa_" + casename + ".out/timestep0000000" + time_str + '.h5')
-        #calculating velocity from momentum, only for the droplet area 
+        # calculating velocity from momentum, only for the droplet area 
         # using numpy masks 
         h_m_dir[time] = np.ma.masked_less(h_m, eps)
         print "time, h max", time, h_m.max()

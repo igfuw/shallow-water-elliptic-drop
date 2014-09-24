@@ -8,11 +8,11 @@ Figure 1 (both panels) can be obtained by running:
    
     $ python ellipse_evolution_odeint.py
 
-Figure 2 you will can be obtained by running:
+Figure 2 can be obtained by running:
    
     $ python energy_conserv.py
 
-Figure 3 you will can be obtained by running:
+Figure 3 can be obtained by running:
    
     $ python circle_evolution.py
 

@@ -41,7 +41,7 @@ def main(lamb0=1, time_f=10, lamb_lim=None, dotlamb_lim=None):
     plt.savefig("fig3.pdf")
     plt.show()
 
-# the code can be call with following options
+# the code can be called with following options
 if __name__ == "__main__":
     opts, args = getopt.getopt(sys.argv[1:], "l:t:",
                                ["lambx0=", "time_f="])
