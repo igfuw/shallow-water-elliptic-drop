@@ -30,7 +30,7 @@ folder with the model output.
 For plotting Figs. 4-7, you need Python with scientific libraries 
 (e.q. NumPy, SciPy, Matplotlib, h5py). 
 
-Figures 4 and 5 can be obtained by running (from shallow-water-elliptic-drop/numerical/):
+Figures 4 and 5 can be obtained by running (from ``shallow-water-elliptic-drop/numerical/``):
 
     $ python contours_h_v.py
 
