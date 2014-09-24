@@ -47,10 +47,10 @@ def analytic_model_fig(ax, x_range, y_range, h_m, v_m, h_a0, h_a, v_a,
 
 
 
-# time_l - list of time levels for plotting
-# dt -  model time step
-# xy_lim - model domain
-# nxy - number of grid points
+# time_l           - list of time levels for plotting
+# dt               -  model time step
+# xy_lim           - model domain
+# nxy              - number of grid points
 # lamb_x0, lamb_y0 - initial values of ellipse axes
 def main(dir, casename="fct+iga", lamb_x0=2., lamb_y0=1., time_l=[1,3,7], 
          dt=0.01, nxy=400, xy_lim=10, eps=1.e-7):
