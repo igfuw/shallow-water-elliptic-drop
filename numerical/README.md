@@ -1,5 +1,5 @@
-Codes for reproducing Figs. 4-7.
-================================
+Codes for reproducing Figs. 4-7 and Table 2.
+===========================================
 
 To compile the code used to obtain the numerical solution presented in the paper,
 you need to first obtain the [libmpdata++](http://libmpdataxx.igf.fuw.edu.pl/) package. 
@@ -41,6 +41,14 @@ Figure 6 can be obtained by running:
 Figure 7 can be obtained by running:
 
     $ python contours_hdiff.py
+
+
+Results from table 2 can be obtained by running:
+
+    $ python errors.py
+
+Results from table 1 can be also obtained by running ``errors.py`` (using the converg_test function), but simulations with various resolutions have to be performed first.  
+
 
  
  
