@@ -36,7 +36,7 @@ def main(dir, lamb_x0=2., lamb_y0=1., time=7, dt=0.01, dx=0.05, xy_lim=10,
     h0_max = 1./ (lamb_x0 * lamb_y0)
     h_diff = abs(h_m - h_an)/h0_max
     print "max of abs(h_m-h_an), h_an.max, h_m.max", abs(h_diff).max(), h_an.max(), h_m.max()
-    levels_diff = np.linspace(1.e-7, 2.e-3, 4)
+    levels_diff = np.linspace(1.e-10, 2.e-3, 4)
     plt.figure(1, figsize = (3.,3.))
     ax = plt.subplot(1,1,1,aspect='equal')
     contour_plot(ax, h_diff, x_range, y_range, levels_var = levels_diff)
