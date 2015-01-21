@@ -18,14 +18,9 @@ def errors(dir, dt, dx, time_l, xy_lim, casename, eps, lamb_x0=2., lamb_y0=1.):
     for it, time in enumerate(time_l):
         print "\n", "TIME t = " + str(time), "dx, dt", dx, dt
         time_str = '%0*d' % (10, int(time/dt))
-        # reading the mode output
-        # TODO: simplify the files names
-        import pdb
-        pdb.set_trace()
-
+        # reading the model output
         h_m, px_m, py_m = reading_modeloutput(dir + casename + ".out/timestep" + time_str + '.h5')
         
-
         # calculating the analytical solution 
         lamb_ar = an_eq.d2_el_lamb_lamb_t_evol(time, lamb_x0=lamb_x0, lamb_y0=lamb_y0)
         h_an = an_eq.d2_el_height_plane(lamb_ar[0], lamb_ar[2], x_range, y_range)
