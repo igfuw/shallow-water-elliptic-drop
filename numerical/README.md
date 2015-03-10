@@ -8,11 +8,11 @@ If you only want to install the library to run the code (without compiling
 the test programs shipped with the library), do the following steps:
 
     $ git clone http://github.com/slayoo/libmpdataxx
-    $ cd libmpdataxx
+    $ cd libmpdataxx/libmpdata++
     $ mkdir build
     $ cd build
     $ cmake ..
-    $ sudo cmake -P cmake_install.cmake
+    $ sudo make install
 
 After installing libmpdata++ you can run the reference simulation
 presented in the paper. After cloning this repository, try:
@@ -20,7 +20,7 @@ presented in the paper. After cloning this repository, try:
     $ cd shallow-water-elliptic-drop/numerical
     $ mkdir build
     $ cd build
-    $ cmake .. -DCMAKE_BUILD_TYPE=Release
+    $ cmake ..
     $ make
     $ ./spreading_drop_2d_el
 
