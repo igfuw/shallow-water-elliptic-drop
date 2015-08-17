@@ -62,7 +62,7 @@ void test(const std::string &outdir)
   using ix = typename ct_params_t::ix;
 
   // solver choice
-  using solver_t = output::hdf5_xdmf<shallow_water<ct_params_t>>;
+  using solver_t = output::hdf5_xdmf<solvers::shallow_water<ct_params_t>>;
 
   // run-time parameters
   typename solver_t::rt_params_t p; 
