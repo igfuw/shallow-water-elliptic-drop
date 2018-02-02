@@ -16,5 +16,6 @@ else()
 endif()
 
 add_executable(spreading_drop_2d_el spreading_drop_2d_el.cpp)
+target_include_directories(spreading_drop_2d_el PUBLIC ${libmpdataxx_INCLUDE_DIRS})
 target_link_libraries(spreading_drop_2d_el ${libmpdataxx_LIBRARIES})
 target_link_libraries(spreading_drop_2d_el debug "-lblitz")
