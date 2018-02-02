@@ -32,7 +32,7 @@ install:
     - sudo cmake -P cmake_install.cmake
 
 script:
-    - cd ../../../shallow-water-elliptic-drop
+    - cd ../../../shallow-water-elliptic-drop/numerical
     - mkdir build
     - cd build
     - cmake -DCMAKE_BUILD_TYPE=Debug ../
